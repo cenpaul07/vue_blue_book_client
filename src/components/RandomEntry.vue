@@ -30,34 +30,22 @@
       </h4>
 
       <div>
-<!--        <div class="button">-->
-<!--          <a @click="fetchEntry" href="#" ">Read your message</a>-->
-          <button class="button" @click="fetchEntry">Read your message</button>
-<!--        </div>-->
-        <div style="height: 60px;"></div>
+          <button @click="fetchEntry">Read your message</button>
+          <div style="height: 60px;"></div>
       </div>
+      <MessageDisplay v-if="entry" :entry="entry" />
     </div>
   </div>
-<!--  <div>-->
-<!--    <button @click="fetchEntry">Click Me</button>-->
-<!--    <div v-if="entry">-->
-<!--      <h2>{{ entry.Excerpt }}</h2>-->
-<!--      <h4>{{ entry.Message }}</h4>-->
 
-<!--      <p v-for="content in entry.Content" :key="content.type">-->
-<!--        <span v-if="content.type === 'text'">{{ content.text }}</span>-->
-<!--        &lt;!&ndash; Handle other content types here &ndash;&gt;-->
-<!--      </p>-->
-<!--    </div>-->
-<!--  </div>-->
 </template>
 
 <script>
 import axios from 'axios';
 import NavBar from "@/components/NavBar.vue";
+import MessageDisplay from "@/components/MessageDisplay.vue";
 
 export default {
-  components: {NavBar},
+  components: {MessageDisplay, NavBar},
   data() {
     return {
       entry: null,
