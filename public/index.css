@@ -41,31 +41,41 @@ a   {
     opacity: 0.7;
 }
 
-.button {
-    text-decoration: none;
-    border: none;
+button {
+    padding: 0.7em 1.5em 0.8em 1.5em;
+
     border: 1px solid white;
     border-radius: 20px;
-    padding: 10px 20px 12px 20px;
-    transition: 0.6s;
-    transform: scale(0.94);
-    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    background-color: #ffffff00;
+    color: white;
+    cursor: pointer;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 1em;
+
     display: flex;
     align-items: center;
     text-align: center;
+
     opacity: 0;
     filter: blur(4px);
-    height: 25px;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    transition: 0.6s;
+
 }
 
-.button:hover  {
-    margin-top: 4px;
+button:hover  {
+    margin-top: 2px;
+    padding: 0.6em 1.5em 0.7em 1.5em;
+
     background-color: rgba(255, 255, 255, 0.213);
+
     transition: 0.3s;
-    padding-bottom: 13px;
     box-shadow: 0px 5px whitesmoke;
-    height: 20px;
 }
+
+
 
 h1 {
     font-family: 'Instrument Serif', serif;
@@ -160,7 +170,7 @@ span:nth-child(13) {
 
 /*---------------------------*/
 
-.button:nth-child(1) {
+button:nth-child(1) {
     animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
