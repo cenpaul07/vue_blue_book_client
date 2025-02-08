@@ -30,40 +30,55 @@
       </h4>
 
       <div>
-          <button @click="fetchEntry">Read your message</button>
-          <div style="height: 60px;"></div>
+        <button @click="openMessage">Read your message</button>
+        <div style="height: 60px;"></div>
       </div>
-      <MessageDisplay v-if="entry" :entry="entry" />
     </div>
   </div>
 
 </template>
 
 <script>
-import axios from 'axios';
 import NavBar from "@/components/NavBar.vue";
-import MessageDisplay from "@/components/MessageDisplay.vue";
+
 
 export default {
-  components: {MessageDisplay, NavBar},
-  data() {
-    return {
-      entry: null,
-    };
-  },
+  components: { NavBar },
   methods: {
-    async fetchEntry() {
-      try {
-        const response = await axios.get('http://localhost:1337/api/entries');
-        const entries = response.data.data;
-        if (entries.length > 0) {
-          const randomIndex = Math.floor(Math.random() * entries.length);
-          this.entry = entries[randomIndex];
-        }
-      } catch (error) {
-        console.error(error);
-      }
+    openMessage() {
+      this.$router.push({ name: 'MessageDisplay' });
     },
   },
 };
 </script>
+
+<!--<script>-->
+<!--import axios from 'axios';-->
+<!--import NavBar from "@/components/NavBar.vue";-->
+
+<!--export default {-->
+<!--  components: { NavBar },-->
+<!--  data() {-->
+<!--    return {-->
+<!--      entry: null,-->
+<!--    };-->
+<!--  },-->
+<!--  methods: {-->
+<!--    async fetchEntry() {-->
+<!--      try {-->
+<!--        const response = await axios.get('http://localhost:1337/api/entries');-->
+<!--        const entries = response.data.data;-->
+<!--        if (entries.length > 0) {-->
+<!--          const randomIndex = Math.floor(Math.random() * entries.length);-->
+<!--          const randomEntry = entries[randomIndex]; // no need to extract 'data' again-->
+<!--          const randomId = randomEntry.documentId;-->
+<!--          const idString = JSON.stringify(randomId);-->
+<!--          this.$router.push({ path: '/message', query: { entry: idString } });-->
+<!--        }-->
+<!--      } catch (error) {-->
+<!--        console.error(error);-->
+<!--      }-->
+<!--    },-->
+<!--  },-->
+<!--};-->
+<!--</script>-->
