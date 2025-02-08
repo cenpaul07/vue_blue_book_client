@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <RandomEntry />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import RandomEntry from './components/RandomEntry.vue';
-
 export default {
-  components: {
-    RandomEntry,
-  },
+  name: 'App'
 };
 </script>
+
+<style>
+/* Add global styles here, if any */
+</style>
