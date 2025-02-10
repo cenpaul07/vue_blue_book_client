@@ -30,7 +30,6 @@ nav{
   padding: 8px 10px;
   height: 40px;
   width: auto;
-  mix-blend-mode: darken;
   transition-duration: 0.6s;
 }.site_logo:hover   {
    opacity: 1;

@@ -12,7 +12,7 @@
         </h1>
         <div class="about_content" id="text">
           <p>
-            <span style="animation: fade-in 1.4s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);"
+            <span style="animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);"
                   v-for="(word, index) in animatedMessage"
                   :key="index">
               {{ word }}&nbsp;
@@ -117,6 +117,7 @@ p   {
 }
 
 .about_content  {
+  font-variation-settings: 'wght' 400;
   text-align: left;
   border-radius: 0px;
   background-blend-mode: darken;
@@ -183,10 +184,9 @@ p   {
  }
 
 .main    {
-  display: block;
+  display: inline-block;
   flex-direction: column;
   text-align: center;
-
   margin-top: -80px;
   height: 60vh;
   padding: 12% 25%;
