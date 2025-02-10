@@ -1,0 +1,19 @@
+[1mdiff --git a/src/router.js b/src/router.js[m
+[1mindex 41c215b..d1fd5fd 100644[m
+[1m--- a/src/router.js[m
+[1m+++ b/src/router.js[m
+[36m@@ -1,12 +1,12 @@[m
+ import { createRouter, createWebHistory } from 'vue-router';[m
+[31m-import RandomEntry from '@/components/RandomEntry.vue';[m
+[32m+[m[32mimport IndexPage from '@/components/IndexPage.vue';[m
+ import MessageDisplay from '@/components/MessageDisplay.vue';[m
+ [m
+ const routes = [[m
+     {[m
+         path: '/',[m
+         name: 'RandomEntry',[m
+[31m-        component: RandomEntry,[m
+[32m+[m[32m        component: IndexPage,[m
+     },[m
+     {[m
+         path: '/',[m
