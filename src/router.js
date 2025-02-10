@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import RandomEntry from '@/components/RandomEntry.vue';
+import IndexPage from '@/components/IndexPage.vue';
 import MessageDisplay from '@/components/MessageDisplay.vue';
 
 const routes = [
     {
         path: '/',
         name: 'RandomEntry',
-        component: RandomEntry,
+        component: IndexPage,
     },
     {
         path: '/',
