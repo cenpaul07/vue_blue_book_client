@@ -8,6 +8,7 @@
       <h1>
         <span class="homeText">Our</span>
         <span class="homeText">&nbsp;Lady's</span>
+        <span class="homeText">&nbsp;messages</span>
         <span class="homeText" >&nbsp;of</span>
         <span class="homeText">&nbsp;mercy.</span> <br>
       </h1>
