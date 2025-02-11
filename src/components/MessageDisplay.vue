@@ -8,14 +8,14 @@
     <div v-else>
       <div class="main">
         <h1>
-          <span>{{ data.Excerpt }}</span>
+          <span style="font-style: italic;">{{ data.Excerpt }}</span>
         </h1>
         <div class="about_content" id="text">
           <p>
             <span style="animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);"
                   v-for="(word, index) in animatedMessage"
                   :key="index">
-              {{ word }}&nbsp;
+              {{ word }}&nbsp; 
             </span>
           </p>
         </div>
@@ -339,7 +339,21 @@ h1 {
   width: 100%;
   font-size: 3em;
   font-weight: 400;
-  margin-left: -5px;
+  margin-left: 0px;
+
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+h4	{
+  opacity: 1;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2em;
+  margin-top: -0.7em;
+
+  max-width: 600px;
 
   transform: scale(0.94);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
@@ -417,14 +431,22 @@ input[type=submit]:nth-child(10)   {
     margin-left: 0px;
   }
 
+  h4  {
+    padding-top: 10%;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 0px;
+  }
   .main   {
     text-align: center;
-    padding: 1% 5%;
+    padding: 2% 5%;
     margin-top: 0px;
   }
 
   .about_content  {
     text-align: left;
+    margin: 0px;
+    padding: 0px;
   }
 
   form    {
@@ -463,6 +485,10 @@ input[type=submit]:nth-child(10)   {
   h1  {
     margin-left: -1px;
     text-align: left;
+  }
+
+  h4  {
+    margin-bottom: 0px;
   }
 
   form    {
