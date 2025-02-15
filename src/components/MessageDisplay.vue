@@ -1,18 +1,20 @@
 <template>
   <div>
     <head>
+      <!DOCTYPE html>
+      <meta charset="UTF-8">
       <link rel="stylesheet" href="/about.css">
     </head>
-    <NavBar />
+    <NavBar :customStyle="{ filter: 'invert(0)' }" />
     <div v-if="loading">Loading...</div>
     <div v-else>
       <div class="main">
         <h1>
-          <span>{{ data.Excerpt }}</span>
+          <span style="font-style: italic;">{{ data.Excerpt }}</span>
         </h1>
         <div class="about_content" id="text">
           <p>
-            <span style="animation: fade-in 1.4s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);"
+            <span style="animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);"
                   v-for="(word, index) in animatedMessage"
                   :key="index">
               {{ word }}&nbsp;
@@ -117,6 +119,7 @@ p   {
 }
 
 .about_content  {
+  font-variation-settings: 'wght' 400;
   text-align: left;
   border-radius: 0px;
   background-blend-mode: darken;
@@ -141,52 +144,10 @@ p   {
   -webkit-mask-size: cover;
 }
 
-.site_logo  {
-  opacity: 0.8;
-  padding: 8px 10px;
-  height: 40px;
-  width: auto;
-  mix-blend-mode: darken;
-  border: 0px solid white;
-  transition-duration: 0.6s;
-}.site_logo:hover   {
-   opacity: 1;
-   mix-blend-mode: color-burn;
-   rotate: 20deg;
-   transition-duration: 0.3s;
-   transition: all 400ms cubic-bezier(.47,2.2,.41,.8);
- }
-
-.right_nav  {
-  margin-top: -8px;
-  display: flex;
-  gap: 1em;
-}
-
-.nav_link   {
-  font-family: 'Instrument Serif';
-  display: flex;
-  align-items: center;
-  padding: 0px 10px;
-  text-decoration: none;
-  font-style: italic;
-  font-size: 1.1em;
-  letter-spacing: 0.02em;
-  mix-blend-mode: multiply;
-  color: #000000;
-  border: 0px solid rgba(255, 255, 255, 0);
-  transition-duration: 0.6s;
-}.nav_link:hover    {
-   border-bottom: 2px solid var(--darkText);
-   transition-duration: 0.1s;
-   margin-bottom: 5px;
- }
-
 .main    {
-  display: block;
+  display: inline-block;
   flex-direction: column;
   text-align: center;
-
   margin-top: -80px;
   height: 60vh;
   padding: 12% 25%;
@@ -339,7 +300,21 @@ h1 {
   width: 100%;
   font-size: 3em;
   font-weight: 400;
-  margin-left: -5px;
+  margin-left: 0px;
+
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+h4	{
+  opacity: 1;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2em;
+  margin-top: -0.7em;
+
+  max-width: 600px;
 
   transform: scale(0.94);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
@@ -417,14 +392,22 @@ input[type=submit]:nth-child(10)   {
     margin-left: 0px;
   }
 
+  h4  {
+    padding-top: 10%;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 0px;
+  }
   .main   {
     text-align: center;
-    padding: 1% 5%;
+    padding: 2% 5%;
     margin-top: 0px;
   }
 
   .about_content  {
     text-align: left;
+    margin: 0px;
+    padding: 0px;
   }
 
   form    {
@@ -463,6 +446,10 @@ input[type=submit]:nth-child(10)   {
   h1  {
     margin-left: -1px;
     text-align: left;
+  }
+
+  h4  {
+    margin-bottom: 0px;
   }
 
   form    {

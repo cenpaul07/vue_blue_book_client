@@ -1,34 +1,39 @@
 <template>
   <div>
+    <head>
+      <!DOCTYPE html>
+      <meta charset="UTF-8">
+    </head>
 
-    <NavBar />
+    <NavBar :customStyle="{ filter: 'invert(1)' }" />
 
     <!-- Main Content -->
     <div class="main">
       <h1>
-        <span class="homeText">Our</span>
-        <span class="homeText">&nbsp;Lady's</span>
-        <span class="homeText" >&nbsp;of</span>
-        <span class="homeText">&nbsp;mercy.</span> <br>
+        <span class="homeText">Our&nbsp;</span>
+        <span class="homeText">Lady's&nbsp;</span>
+        <span class="homeText">messages&nbsp;</span>
+        <span class="homeText" >of&nbsp;</span>
+        <span class="homeText">mercy.</span> <br>
       </h1>
 
       <h4>
-        <span class="homeText">&nbsp;Pray</span>
-        <span class="homeText">&nbsp;in</span>
-        <span class="homeText">&nbsp;your</span>
-        <span class="homeText">&nbsp;mind</span>
-        <span class="homeText">&nbsp;and</span>
-        <span class="homeText">&nbsp;click</span>
-        <span class="homeText">&nbsp;the</span>
-        <span class="homeText">&nbsp;button</span>
-        <span class="homeText">&nbsp;below</span>
-        <span class="homeText">&nbsp;to</span>
-        <span class="homeText">&nbsp;read</span>
-        <span class="homeText">&nbsp;your</span>
-        <span class="homeText">&nbsp;message.</span> <br>
+        <span class="homeText">Pray&nbsp;</span>
+        <span class="homeText">in&nbsp;</span>
+        <span class="homeText">your&nbsp;</span>
+        <span class="homeText">mind&nbsp;</span>
+        <span class="homeText">and&nbsp;</span>
+        <span class="homeText">click&nbsp;</span>
+        <span class="homeText">the&nbsp;</span>
+        <span class="homeText">button&nbsp;</span>
+        <span class="homeText">below&nbsp;</span>
+        <span class="homeText">to&nbsp;</span>
+        <span class="homeText">read&nbsp;</span>
+        <span class="homeText">your&nbsp;</span>
+        <span class="homeText">message.</span> <br>
       </h4>
 
-      <div>
+      <div class="read_message_button_div">
         <button @click="openMessage">Read your message</button>
         <div style="height: 60px;"></div>
       </div>
@@ -39,7 +44,6 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-
 
 export default {
   components: { NavBar },
@@ -73,6 +77,22 @@ body{
   color: white;
 }
 
+.site_logo  {
+  opacity: 0.8;
+  padding: 8px 10px;
+  height: 40px;
+  width: auto;
+  mix-blend-mode: darken;
+  border: 0px solid white;
+  transition-duration: 0.6s;
+  
+}.site_logo:hover   {
+   opacity: 1;
+   mix-blend-mode: color-burn;
+   rotate: 20deg;
+   transition-duration: 0.3s;
+   transition: all 400ms cubic-bezier(.47,2.2,.41,.8);
+ }
 
 
 .main    {
@@ -253,7 +273,6 @@ button:nth-child(1) {
 
   .main   {
     text-align: center;
-
   }
 
   .button	{
@@ -277,6 +296,11 @@ button:nth-child(1) {
   .main   {
     display: block;
     padding: 1% 10%;
+  }
+
+  .read_message_button_div {
+    display: flex;
+    justify-content: center;
   }
 
 }
