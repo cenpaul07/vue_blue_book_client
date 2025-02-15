@@ -6,7 +6,7 @@
       <link rel="stylesheet" href="/about.css">
     </head>
     <NavBar :customStyle="{ filter: 'invert(0)' }" />
-    <div v-if="loading">Loading...</div>
+    <div v-if="loading">Fetching....</div>
     <div v-else>
       <div class="main">
         <h1>

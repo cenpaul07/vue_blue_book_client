@@ -318,33 +318,4 @@ button:nth-child(1) {
 </style>
 
 
-<!--<script>-->
-<!--import axios from 'axios';-->
-<!--import NavBar from "@/components/NavBar.vue";-->
 
-<!--export default {-->
-<!--  components: { NavBar },-->
-<!--  data() {-->
-<!--    return {-->
-<!--      entry: null,-->
-<!--    };-->
-<!--  },-->
-<!--  methods: {-->
-<!--    async fetchEntry() {-->
-<!--      try {-->
-<!--        const response = await axios.get('http://localhost:1337/api/entries');-->
-<!--        const entries = response.data.data;-->
-<!--        if (entries.length > 0) {-->
-<!--          const randomIndex = Math.floor(Math.random() * entries.length);-->
-<!--          const randomEntry = entries[randomIndex]; // no need to extract 'data' again-->
-<!--          const randomId = randomEntry.documentId;-->
-<!--          const idString = JSON.stringify(randomId);-->
-<!--          this.$router.push({ path: '/message', query: { entry: idString } });-->
-<!--        }-->
-<!--      } catch (error) {-->
-<!--        console.error(error);-->
-<!--      }-->
-<!--    },-->
-<!--  },-->
-<!--};-->
-<!--</script>-->
