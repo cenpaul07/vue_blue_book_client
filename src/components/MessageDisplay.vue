@@ -47,7 +47,7 @@ export default {
   methods: {
     async fetchEntry() {
       try {
-        const response = await axios.get('http://localhost:1337/api/entries');
+        const response = await axios.get('https://blue-book-strapi-backend.onrender.com/api/entries');
         const entries = response.data.data;
         if (entries.length > 0) {
           const randomIndex = Math.floor(Math.random() * entries.length);
