@@ -1,7 +1,11 @@
 <template>
   <div>
+    <head>
+      <!DOCTYPE html>
+      <meta charset="UTF-8">
+    </head>
 
-    <NavBar />
+    <NavBar :customStyle="{ filter: 'invert(1)' }" />
 
     <!-- Main Content -->
     <div class="main">
@@ -41,7 +45,6 @@
 <script>
 import NavBar from "@/components/NavBar.vue";
 
-
 export default {
   components: { NavBar },
   methods: {
@@ -74,6 +77,22 @@ body{
   color: white;
 }
 
+.site_logo  {
+  opacity: 0.8;
+  padding: 8px 10px;
+  height: 40px;
+  width: auto;
+  mix-blend-mode: darken;
+  border: 0px solid white;
+  transition-duration: 0.6s;
+  
+}.site_logo:hover   {
+   opacity: 1;
+   mix-blend-mode: color-burn;
+   rotate: 20deg;
+   transition-duration: 0.3s;
+   transition: all 400ms cubic-bezier(.47,2.2,.41,.8);
+ }
 
 
 .main    {

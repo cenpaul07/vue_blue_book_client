@@ -1,9 +1,11 @@
 <template>
   <div>
     <head>
+      <!DOCTYPE html>
+      <meta charset="UTF-8">
       <link rel="stylesheet" href="/about.css">
     </head>
-    <NavBar />
+    <NavBar :customStyle="{ filter: 'invert(0)' }" />
     <div v-if="loading">Loading...</div>
     <div v-else>
       <div class="main">
@@ -15,7 +17,7 @@
             <span style="animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);"
                   v-for="(word, index) in animatedMessage"
                   :key="index">
-              {{ word }}&nbsp; 
+              {{ word }}&nbsp;
             </span>
           </p>
         </div>
@@ -141,47 +143,6 @@ p   {
   -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%);
   -webkit-mask-size: cover;
 }
-
-.site_logo  {
-  opacity: 0.8;
-  padding: 8px 10px;
-  height: 40px;
-  width: auto;
-  mix-blend-mode: darken;
-  border: 0px solid white;
-  transition-duration: 0.6s;
-}.site_logo:hover   {
-   opacity: 1;
-   mix-blend-mode: color-burn;
-   rotate: 20deg;
-   transition-duration: 0.3s;
-   transition: all 400ms cubic-bezier(.47,2.2,.41,.8);
- }
-
-.right_nav  {
-  margin-top: -8px;
-  display: flex;
-  gap: 1em;
-}
-
-.nav_link   {
-  font-family: 'Instrument Serif';
-  display: flex;
-  align-items: center;
-  padding: 0px 10px;
-  text-decoration: none;
-  font-style: italic;
-  font-size: 1.1em;
-  letter-spacing: 0.02em;
-  mix-blend-mode: multiply;
-  color: #000000;
-  border: 0px solid rgba(255, 255, 255, 0);
-  transition-duration: 0.6s;
-}.nav_link:hover    {
-   border-bottom: 2px solid var(--darkText);
-   transition-duration: 0.1s;
-   margin-bottom: 5px;
- }
 
 .main    {
   display: inline-block;

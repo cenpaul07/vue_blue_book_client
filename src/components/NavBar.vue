@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <a href="/">
-      <img src="/images/Rose_logo.png" class="site_logo" alt="logo">
+    <a :style="customStyle" href="/">
+      <img src="../../public/images/Rose_logo.png" class="site_logo" alt="logo">
     </a>
     <div class="right_nav">
       <a href="/" class="nav_link">Home</a>
@@ -13,7 +13,13 @@
 
 <script>
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  props:  {
+    customStyle: {
+      type: Object,
+      default: () => ({})
+    }
+  }
 };
 </script>
 
@@ -31,9 +37,9 @@ nav{
   height: 40px;
   width: auto;
   transition-duration: 0.6s;
+  filter: invert(1);
 }.site_logo:hover   {
    opacity: 1;
-   mix-blend-mode: color-burn;
    rotate: 20deg;
    transition-duration: 0.3s;
    transition: all 400ms cubic-bezier(.47,2.2,.41,.8);
